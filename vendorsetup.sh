@@ -1,1 +1,1 @@
-add_lunch_combo cm_serranoltespr-userdebug
+add_lunch_combo lineage_serranoltespr-userdebug

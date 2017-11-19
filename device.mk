@@ -1,4 +1,5 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013-2016, The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,27 +12,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Also get non-open-source specific aspects if available
-
-PRODUCT_COPY_FILES += \
-        device/samsung/serranoltespr/rootdir/init.carrier.rc:root/init.carrier.rc
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
-
-PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/lib/libsec-ril.so
-
-PRODUCT_PROPERTY_OVERRIDES += ro.telephony.ril_class=jflteRIL
-
-DEVICE_PACKAGE_OVERLAYS += device/samsung/serranoltespr/overlay
-
-$(call inherit-product-if-exists, vendor/samsung/serranoltespr/serranoltespr-vendor.mk)
+# Inherit from serrano-common
 $(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
 $(call inherit-product, device/samsung/serrano-common/nfc.mk)
 
+# Also get non-open-source specific aspects
+$(call inherit-product, vendor/samsung/serranoltespr/serranoltespr-vendor.mk)
 
 # Device overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/serranoltespr/overlay
 
 # Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+
+# Amplifier
+PRODUCT_PACKAGES += \
+    audio_amplifier.msm8960

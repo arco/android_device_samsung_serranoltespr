@@ -1,4 +1,5 @@
-# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2013-2016, The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +15,20 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit from serranoltespr device
 $(call inherit-product, device/samsung/serranoltespr/device.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_serranoltespr
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+
+PRODUCT_NAME := lineage_serranoltespr
 PRODUCT_DEVICE := serranoltespr
 PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
+PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := SPH-L520
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=serranoltespr \
+    BUILD_FINGERPRINT="samsung/serranoltespr/serranoltespr:4.4.2/KOT49H/L520VPSBQA1:user/release-keys" \
+    PRIVATE_BUILD_DESC="serranoltespr-user 4.4.2 KOT49H L520VPSBQA1 release-keys"

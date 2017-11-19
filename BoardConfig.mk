@@ -1,4 +1,5 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013-2016, The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,26 +21,20 @@
 # definition file).
 #
 
-PRODUCT_COPY_FILES += \
-	device/samsung/serranoltespr/rootdir/init.carrier.rc:root/init.carrier.rc
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib/libsec-ril.so
-
+# Inherit from common serrano
 -include device/samsung/serrano-common/BoardConfigCommon.mk
+
+# Inherit from proprietary vendor
+-include vendor/samsung/serranoltespr/BoardConfigVendor.mk
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := serranoltespr,L520,SPH-L520
 
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_serrano_spr_defconfig
 
-# NFC
-BOARD_HAVE_NFC := true
-
 # LED
 BOARD_HAVE_MULTI_COLOR_LED := true
 
-BOARD_RIL_CLASS := ../../../device/samsung/jf-common/ril
-
--include vendor/samsung/serranoltespr/BoardConfigVendor.mk
-
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true

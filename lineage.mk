@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/samsung/serranoltespr/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_serranoltespr
 PRODUCT_DEVICE := serranoltespr
@@ -30,5 +30,6 @@ PRODUCT_MODEL := SPH-L520
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=serranoltespr \
-    BUILD_FINGERPRINT="samsung/serranoltespr/serranoltespr:4.4.2/KOT49H/L520VPSBQA1:user/release-keys" \
     PRIVATE_BUILD_DESC="serranoltespr-user 4.4.2 KOT49H L520VPSBQA1 release-keys"
+
+BUILD_FINGERPRINT := "samsung/serranoltespr/serranoltespr:4.4.2/KOT49H/L520VPSBQA1:user/release-keys"

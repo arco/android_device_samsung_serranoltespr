@@ -1,7 +1,7 @@
 # system.prop for serranoltespr
 #
 
-rild.libpath=/system/lib/libsec-ril.so
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 
 persist.radio.snapshot_enabled=1
 persist.radio.snapshot_timer=22
@@ -11,3 +11,4 @@ ro.cdma.home.operator.numeric=310120
 ro.telephony.default_network=4
 ro.telephony.default_cdma_sub=0
 telephony.lteOnCdmaDevice=1
+DEVICE_PROVISIONED=1

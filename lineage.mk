@@ -29,6 +29,7 @@ PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := SPH-L520
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=serranoltespr \
     TARGET_DEVICE=serranoltespr \
     PRIVATE_BUILD_DESC="serranoltespr-user 4.4.2 KOT49H L520VPSBQA1 release-keys"
 

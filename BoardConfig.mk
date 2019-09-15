@@ -27,6 +27,9 @@
 # Inherit from proprietary vendor
 -include vendor/samsung/serranoltespr/BoardConfigVendor.mk
 
+# Manifest
+DEVICE_MANIFEST_FILE += device/samsung/serranoltespr/manifest.xml
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := serranoltespr,L520,SPH-L520
 
